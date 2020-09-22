@@ -170,7 +170,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-09-22 20:01:16 / 修改时间：23:44:26" itemprop="dateCreated datePublished" datetime="2020-09-22T20:01:16+08:00">2020-09-22</time>
+              <time title="创建时间：2020-09-22 20:01:16 / 修改时间：23:47:01" itemprop="dateCreated datePublished" datetime="2020-09-22T20:01:16+08:00">2020-09-22</time>
             </span>
 
           
@@ -248,7 +248,10 @@
 
 <hr>
 <h5 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h5><p>数据类型从低到高时,不需要我们进行类型转换,因为java自动帮我们进行了类型转换<br>int a = 128;<br>float = a ;//输出结果为128.0<br>运算时,java也会进行自动类型转换<br>例如 int与char进行运算就会将结果自动转换为int型的数据,如果数据不超界的话可以通过强转转换成相应char字符,这边具体就不举例了,大家可以自己在ide上试试.<br>而运算时应注意数据超界<br>当int与int进行运算后数据超界,使用long类型进行接收时,我们会发现long类型依旧是一个意义不明的数字<br>例子</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10_0000_0000</span>;</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> total = a*b;<span class="comment">//输出结果很明显会超界,10亿*10已经超出了int类型的值所能表示的范围.</span></span><br><span class="line"><span class="keyword">long</span> total2 = a*b;<span class="comment">//虽然我们使用了long类型进行存储,但是大家在运行代码时会发现,total2已经是total1的值,这是因为a*b在运算时就已经超界,内存溢出了,哪怕是使用了long类型进行接收,结果依然是错误的,我们应该在运算时就进行强转</span></span><br><span class="line"><span class="keyword">long</span> total3 = a*(<span class="keyword">long</span>)b;<span class="comment">//输出结果为100_0000_0000;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10_0000_0000</span>;</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> total = a*b;<span class="comment">//输出结果很明显会超界,10亿*10已经超出了int类型的值所能表示的范围.</span></span><br><span class="line"><span class="keyword">long</span> total2 = a*b;</span><br></pre></td></tr></table></figure>
+
+<p>虽然我们使用了long类型进行存储,但是大家在运行代码时会发现,total2已经是total1的值,这是因为a<em>b在运算时就已经超界,内存溢出了,哪怕是使用了long类型进行接收,结果依然是错误的,我们应该在运算时就进行强转</em>  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> total3 = a*(<span class="keyword">long</span>)b;<span class="comment">//输出结果为100_0000_0000;  </span></span><br></pre></td></tr></table></figure>
 
 <p>这样java在运算时会自动的将数据转换为long类型进行运算,而数据超界的问题就解决了.  </p>
 <hr>
