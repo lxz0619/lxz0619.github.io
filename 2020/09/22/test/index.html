@@ -20,14 +20,17 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="test">
+  <meta name="description" content="为什么会写这个博客转眼已经是大四的学生了,做了很多的笔试题,看了很多的面经,发现自己基础不牢靠,所以萌生了重新学习一边java基础的想法,然后又到了毕业的时候,就用个博客记录自己的java之路2.0吧 java的数据类型java有两种大的数据类型,分为基本类型和引用类型.基本数据类型有八种类型,引用数据类型有三种类型 基本数据类型八种基本数据类型又细分为四种,整数类型,浮点数类型,字符型和布尔型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java学习之路(1)">
 <meta property="og:url" content="http://example.com/2020/09/22/test/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="为什么会写这个博客转眼已经是大四的学生了,做了很多的笔试题,看了很多的面经,发现自己基础不牢靠,所以萌生了重新学习一边java基础的想法,然后又到了毕业的时候,就用个博客记录自己的java之路2.0吧 java的数据类型java有两种大的数据类型,分为基本类型和引用类型.基本数据类型有八种类型,引用数据类型有三种类型 基本数据类型八种基本数据类型又细分为四种,整数类型,浮点数类型,字符型和布尔型">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-22T12:01:16.000Z">
-<meta property="article:modified_time" content="2020-09-22T12:01:16.288Z">
+<meta property="article:modified_time" content="2020-09-22T14:29:43.703Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="utils">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://example.com/2020/09/22/test/">
@@ -43,7 +46,7 @@
   };
 </script>
 
-  <title>test | Hexo</title>
+  <title>java学习之路(1) | Hexo</title>
   
 
 
@@ -161,7 +164,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          test
+          java学习之路(1)
         </h1>
 
         <div class="post-meta">
@@ -170,8 +173,9 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-09-22 20:01:16" itemprop="dateCreated datePublished" datetime="2020-09-22T20:01:16+08:00">2020-09-22</time>
+              <time title="创建时间：2020-09-22 20:01:16 / 修改时间：22:29:43" itemprop="dateCreated datePublished" datetime="2020-09-22T20:01:16+08:00">2020-09-22</time>
             </span>
 
           
@@ -185,7 +189,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="为什么会写这个博客"><a href="#为什么会写这个博客" class="headerlink" title="为什么会写这个博客"></a>为什么会写这个博客</h1><p>转眼已经是大四的学生了,做了很多的笔试题,看了很多的面经,发现自己基础不牢靠,所以萌生了重新学习一边java基础的想法,然后又到了毕业的时候,就用个博客记录自己的java之路2.0吧</p>
+<h1 id="java的数据类型"><a href="#java的数据类型" class="headerlink" title="java的数据类型"></a>java的数据类型</h1><p>java有两种大的数据类型,分为基本类型和引用类型.基本数据类型有八种类型,引用数据类型有三种类型</p>
+<h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><p>八种基本数据类型又细分为四种,整数类型,浮点数类型,字符型和布尔型</p>
+<h3 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h3><h4 id="byte"><a href="#byte" class="headerlink" title="byte"></a>byte</h4><p>占有一个字节 可取值范围为:-2^7<del>2^7-1<br>例子 byte a = 100;<br>不赋值的话默认值为0<br>需要注意的是,byte类型最大支持的范围只到-128</del>127,所以如果取byte b = 130;编译器会报错</p>
+<h4 id="short"><a href="#short" class="headerlink" title="short"></a>short</h4><p>占有两个字节 可取值范围为:-2^15~2^15-1<br>例子 short a = 100;<br>不赋值的话默认值为0</p>
+<h4 id="int"><a href="#int" class="headerlink" title="int"></a>int</h4><p>最重要的整数类型,大部分定义的整数类型都是int型的变量.<br>占有四个字节 可取值范围为:-2^31~2^31-1<br>例子 int a = 100;<br>不赋值的话默认值为0<br>int类型也可以用来表示八进制和十六进制的数<br>例子<br>    int b = 010;//输出结果为 8<br>    int c = 017;//输出结果为 9<br>    int d = 018;//报错<br>例子<br>    int e = 0x11;//输出结果为17<br>    int f = 0x19;//输出结果为25<br>    int g = 0x1F;//输出结果为32</p>
+<h4 id="long"><a href="#long" class="headerlink" title="long"></a>long</h4><p>一般用于比较大的整数类型,取值范围较大<br>占有八个字节 可取值范围为 :-2^63~2^63-1<br>例子 long a = 100L;</p>
+<h3 id="浮点数类型"><a href="#浮点数类型" class="headerlink" title="浮点数类型"></a>浮点数类型</h3><p>浮点数可以用来表示小数,但是他不能用来表示精确的值,比如货币,因为浮点数会失去一定的精度,一般在货币中使用BigDecimal对高精度的数进行精确计算.</p>
+<h4 id="float"><a href="#float" class="headerlink" title="float"></a>float</h4><p>单精度浮点数类型 占有四个字节<br>例子 float f = 100.0f;<br>不赋值的话默认值为0.0f</p>
+<h4 id="double"><a href="#double" class="headerlink" title="double"></a>double</h4><p>双精度浮点数类型 占有八个字节<br>和int一样,一般我们使用浮点数时大部分时间是使用double类型进行定义<br>例子 double d = 100.0<br>不赋值的话默认值为0.0d</p>
+<h3 id="字符类型"><a href="#字符类型" class="headerlink" title="字符类型"></a>字符类型</h3><p>字符类型是一个单一的字符,可以用来存储任何字符,包括中文.所有的字符本质还是数字,char字符是通过unicode编码,对char字符进行运算时,因为有着unicode编码表,所以会将字符对应的数字进行相加<br>占有两个字节<br>例子<br>char c1 = ‘铁’;//输出结果为铁<br>sout((int)c1);//输出结果为38081<br>char c2 = ‘a’;//输出结果为a<br>sout((int)c2);//输出结果为97<br>sout(c1+c2);//输出结果为38187<br>char c3 = (char)(c1+c2);//输出结果为锢<br>char c4 = ‘\u0097’//输出结果为a<br>从例子中可以看出,每个中文字符都有对应的数字,英文字符和符号按照ASCII码表中的值为数字</p>
+<h3 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h3><p>布尔类型只表示一位信息,只有两个取值,分别是true和false<br>布尔类型只能用来作为一种标志来记录是非情况<br>例子 boolean flag = true;<br>不赋值的话默认值为false</p>
+<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>不同类型的数据可以进行转换</p>
+<h4 id="字符类型转换优先级"><a href="#字符类型转换优先级" class="headerlink" title="字符类型转换优先级"></a>字符类型转换优先级</h4><p>byte,short,char &lt; int &lt; long &lt; float &lt; double<br>一般是通过数据类型占有的字节大小判断优先级,而浮点数类型的优先级比整数类型高<br>在运算中,不同类型的数据先转换为同一数据类型,然后进行运算.</p>
+<h5 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h5><p>数据类型从高到低转换时,需要进行强制类型转换,也就是俗称的强转.<br>具体方法为,在变量前加个括号<br>int a = 127;<br>byte b = (byte)a;//输出结果为 127<br>如果int的值过大,就会造成内存溢出的现象<br>int a = 129;<br>byte b = (byte)a;//输出结果为-128</p>
+<h4 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h4><p>数据类型从低到高时,不需要我们进行类型转换,因为java自动帮我们进行了类型转换<br>int a = 128;<br>float = a ;//输出结果为128.0<br>运算时,java也会进行自动类型转换<br>例如 int与char进行运算就会将结果自动转换为int型的数据,如果数据不超界的话可以通过强转转换成相应char字符,这边具体就不举例了,大家可以自己在ide上试试.<br>而运算时应注意数据超界<br>当int与int进行运算后数据超界,使用long类型进行接收时,我们会发现long类型依旧是一个意义不明的数字<br>例子<br>int a = 10_0000_0000;<br>int b = 10;<br>int total = a<em>b;//输出结果很明显会超界,10亿</em>10已经超出了int类型的值所能表示的范围.<br>long total2 = a<em>b;虽然我们使用了long类型进行存储,但是大家在运行代码时会发现,total2已经是total1的值,这是因为a</em>b在运算时就已经超界,内存溢出了,哪怕是使用了long类型进行接收,结果依然是错误的,我们应该在运算时就进行强转<br>long total3 = a*(long)b;//输出结果为100_0000_0000;<br>这样java在运算时会自动的将数据转换为long类型进行运算,而数据超界的问题就解决了.<br><strong>需要注意的是,不能对布尔类型进行类型转换</strong><br><strong>也不能将基本数据类型转换为引用数据类型</strong><br><strong>转换的时候应该注意内存溢出和精度问题</strong></p>
+<h2 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h2>
     </div>
 
     
@@ -193,6 +213,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/utils/" rel="tag"># utils</a>
+          </div>
 
         
 
@@ -262,6 +285,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E5%86%99%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2"><span class="nav-number">1.</span> <span class="nav-text">为什么会写这个博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">java的数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B4%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.1.</span> <span class="nav-text">整数类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#byte"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">byte</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#short"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">short</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#int"><span class="nav-number">2.1.1.3.</span> <span class="nav-text">int</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#long"><span class="nav-number">2.1.1.4.</span> <span class="nav-text">long</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.2.</span> <span class="nav-text">浮点数类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#float"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">float</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#double"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">double</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.3.</span> <span class="nav-text">字符类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.4.</span> <span class="nav-text">布尔类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">2.1.5.</span> <span class="nav-text">类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-number">2.1.5.1.</span> <span class="nav-text">字符类型转换优先级</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%BA%E5%88%B6%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">2.1.5.1.1.</span> <span class="nav-text">强制类型转换</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">2.1.5.2.</span> <span class="nav-text">自动类型转换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.2.</span> <span class="nav-text">引用数据类型</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -278,6 +302,10 @@
           <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
       </div>
   </nav>
 </div>
