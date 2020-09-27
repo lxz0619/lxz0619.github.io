@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="java修饰符java中的修饰符主要分为以下两类  访问修饰符  非访问修饰符   访问修饰符访问修饰符分为三种,分别是public private protectd public可以作用于方法&#x2F;变量&#x2F;接口&#x2F;类,当这些对象使用该修饰符后,就对所有类可见. 最为常见的就是 123public static void main(String[] args) &amp;#123;    dosth;&amp;#125;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java学习之路(3)">
+<meta property="og:url" content="http://example.com/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="java修饰符java中的修饰符主要分为以下两类  访问修饰符  非访问修饰符   访问修饰符访问修饰符分为三种,分别是public private protectd public可以作用于方法&#x2F;变量&#x2F;接口&#x2F;类,当这些对象使用该修饰符后,就对所有类可见. 最为常见的就是 123public static void main(String[] args) &amp;#123;    dosth;&amp;#125;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/8.1.png">
+<meta property="og:image" content="http://example.com/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/8.2.png">
+<meta property="og:image" content="http://example.com/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/8.3.png">
+<meta property="og:image" content="http://example.com/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/1.png">
+<meta property="og:image" content="http://example.com/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/2.png">
+<meta property="og:image" content="http://example.com/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/3.png">
+<meta property="og:image" content="http://example.com/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/4.png">
+<meta property="og:image" content="http://example.com/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/5.png">
+<meta property="og:image" content="http://example.com/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/6.png">
+<meta property="og:image" content="http://example.com/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/7.png">
+<meta property="article:published_time" content="2020-09-25T03:43:44.000Z">
+<meta property="article:modified_time" content="2020-09-27T04:51:45.246Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/8.1.png">
+
+<link rel="canonical" href="http://example.com/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>java学习之路(3) | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          java学习之路(3)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-25 11:43:44" itemprop="dateCreated datePublished" datetime="2020-09-25T11:43:44+08:00">2020-09-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-27 12:51:45" itemprop="dateModified" datetime="2020-09-27T12:51:45+08:00">2020-09-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="java修饰符"><a href="#java修饰符" class="headerlink" title="java修饰符"></a>java修饰符</h1><p>java中的修饰符主要分为以下两类</p>
+<ul>
+<li><p>访问修饰符</p>
+</li>
+<li><p>非访问修饰符</p>
+</li>
+</ul>
+<h2 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h2><p>访问修饰符分为三种,分别是public private protectd</p>
+<h3 id="public"><a href="#public" class="headerlink" title="public"></a>public</h3><p>可以作用于方法/变量/接口/类,当这些对象使用该修饰符后,就对所有类可见.</p>
+<p>最为常见的就是</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    dosth;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果调用的public类在不同的包当中,则需要通过 import 包名.类名进行导入</p>
+<p>而main方法必须是public修饰,否则虚拟机就不能运行该类</p>
+<hr>
+<h3 id="protectd"><a href="#protectd" class="headerlink" title="protectd"></a>protectd</h3><p>可以修饰变量,构造方法,方法,不能修饰类.protectd修饰符的意思是受保护的.</p>
+<ul>
+<li><p>被protected修饰的成员在包内可见,并且对子类可见</p>
+</li>
+<li><p>如果子类和父类不在同一包内,那么子类中可以使用子类对象访问继承而来的protected方法,不能使用父类对象的protected方法</p>
+<p>话不多说,直接上代码.</p>
+<p><img src="/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/8.1.png" alt="8.1"></p>
+<p><img src="/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/8.2.png" alt="8.2"></p>
+<p><img src="/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/8.3.png" alt="8.3"></p>
+</li>
+</ul>
+<hr>
+<h3 id="private"><a href="#private" class="headerlink" title="private"></a>private</h3><p>可以修饰方法,变量,构造方法,类和接口不能被private修饰.private修饰符的意思是私有的,<strong>这些被修饰的方法与变量只能被所属类访问</strong>,父类中声明为private的方法是不能被继承的.最常见的就是我们自定义的数据类.里头的变量一般都是使用private修饰,然后我们通过共有的getter,setter方法对对象中的数据进行操作.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestBean</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String a;</span><br><span class="line">    <span class="keyword">private</span> String b;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getA</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setA</span><span class="params">(String a)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.a = a;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getB</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setB</span><span class="params">(String b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.b = b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>private操作符主要是为了用来隐藏类的具体实现细节和保护数据.</p>
+<hr>
+<h2 id="非访问修饰符"><a href="#非访问修饰符" class="headerlink" title="非访问修饰符"></a>非访问修饰符</h2><p>非访问修饰符主要是为了实现一些其他的功能,主要有static,final,abstract,synchronized,volatile</p>
+<h3 id="static"><a href="#static" class="headerlink" title="static"></a>static</h3><p>用来修饰方法,变量和代码块.使得方法和变量变成静态的.</p>
+<hr>
+<h4 id="静态变量"><a href="#静态变量" class="headerlink" title="静态变量"></a>静态变量</h4><p>当变量被声明为static时,那么该变量的数据就是一个共享数据.静态变量是属于类,而不是属于对象的.局部变量是不能够被声明为静态变量的.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestBean</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> String a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//静态变量的访问方式</span></span><br><span class="line"><span class="comment">//1.使用对象进行访问</span></span><br><span class="line">TestBean testBean = <span class="keyword">new</span> TeatBean();</span><br><span class="line">testBean.a = <span class="string">&quot;123&quot;</span>;</span><br><span class="line">System.out.println(testBean.a);</span><br><span class="line"><span class="comment">//2.使用类名进行访问</span></span><br><span class="line">TestBean.a = <span class="string">&quot;1234&quot;</span>;</span><br><span class="line">System.out.println(TestBean.a);</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/1.png" alt="1"></p>
+<p>可以看到,a的值被改变了两次.</p>
+<hr>
+<p>那么为什么说静态变量是属于类而不是属于对象的呢?</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestBean</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> String a;</span><br><span class="line">&#125;</span><br><span class="line">TestBean testBean1 = <span class="keyword">new</span> TestBean();</span><br><span class="line">TestBean testBean2 = <span class="keyword">new</span> TestBean();</span><br><span class="line">testBean1.a = <span class="string">&quot;123&quot;</span>;</span><br><span class="line">System.out.println(testBean1.a);</span><br><span class="line">System.out.println(testBean2.a);</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/2.png" alt="2"></p>
+<p>可以看到,我们只对testBean1的a变量进行了赋值,而teatBean2的a变量同样等于123.</p>
+<p>这是因为在类被第一次加载的时候,被static修饰的静态变量也随着加载,而且只在类第一次被加载的时候进行初始化,后面根据需要再进行赋值.<strong>静态变量被类加载的时候就分配了内存空间,以后实例化对象的时候就不会再分配空间给它,而是将所有的新实例化的对象指向它的空间</strong></p>
+<p>这就是为什么静态变量的数据被称为共享数据的原因.这个数据是该类所共享的,同时<strong>修改也是同步的.</strong></p>
+<p>而由对象创建的实例变量则是不同的对象拥有着不同的变量,哪怕数据相同,修改也是不相同的.</p>
+<p>因此static关键字应该用于需要共享数据的变量.</p>
+<hr>
+<h4 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h4><p>上面说了,static不只能用来修饰变量,也能用来修饰静态方法.我们见得最多的方法就是main方法,而main方法就是一个静态方法.</p>
+<p>使用静态方法的方式与静态变量类似</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestBean</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> a;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ++a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    a=TestBean.add();</span><br><span class="line">    TestBean testBean = <span class="keyword">new</span> TestBean();</span><br><span class="line">    a=testBean.add();</span><br><span class="line">    System.out.println(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以使用类名或者对象名来调用静态方法.</p>
+<p>而静态方法只能够使用静态区的数据,也就是说静态方法只能访问其他的静态方法和静态变量,他不能访问实例方法和实例变量.因为实例方法与变量只有实例化对象后才进入内存能够使用,<strong>而静态方法在对象实例化之前就已经初始化了</strong>.</p>
+<hr>
+<h4 id="静态代码块"><a href="#静态代码块" class="headerlink" title="静态代码块"></a>静态代码块</h4><p><strong>静态代码块随着类的加载而初始化,且只执行一次</strong></p>
+<p>这就是静态代码块最大的用处,用来初始化一些常量</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span>&#123;</span><br><span class="line">    <span class="keyword">final</span> String url = <span class="string">&quot;http://localhost:8080&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>静态代码块的执行顺序是:<strong>静态代码块-&gt;非静态代码块-&gt;构造函数</strong></p>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Father</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;父类的静态代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;父类的非静态代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Father</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;父类的构造方法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Sons</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类的静态代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类的非静态代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Sons</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类的构造方法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;main方法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>当子类的main方法什么都不做时,输出结果如下</p>
+<p><img src="/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/3.png" alt="3"></p>
+<p>就和上文说的一样,静态代码块随着类的加载而加载</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Sons</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类的静态代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类的非静态代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Sons</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;子类的构造方法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;main方法&quot;</span>);</span><br><span class="line">        <span class="keyword">new</span> Sons();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当子类的main方法中new了一个Sons对象时,输出结果如下</p>
+<p><img src="/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/4.png" alt="4"></p>
+<p>可以看到,静态代码块势最早初始化的,而静态方法main也比非静态代码块的优先级高,接着就是非静态代码和构造方法,这与上文所说的优先级相对应</p>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;main方法&quot;</span>);</span><br><span class="line">    <span class="keyword">new</span> Sons();</span><br><span class="line">    <span class="keyword">new</span> Sons();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当子类的main方法中new了两个Sons对象时,输出结果如下</p>
+<p><img src="/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/5.png" alt="5"></p>
+<p>可以看到,父类和子类的非静态代码块和构造方法分别执行了两次,但是静态代码块和静态方法main只执行 了一次.这就与上文的静态代码块和静态方法<strong>只在类加载的时候初始化,且只执行一次</strong>相吻合.</p>
+<h3 id="final"><a href="#final" class="headerlink" title="final"></a>final</h3><hr>
+<p>final可以用来修饰类,方法和变量.</p>
+<h4 id="final修饰的变量"><a href="#final修饰的变量" class="headerlink" title="final修饰的变量"></a>final修饰的变量</h4><p>用来修饰变量是final最常用的地方,如果一个变量用了final来修饰,那么<strong>这个变量的值将不能改变</strong></p>
+<p>如果这个变量是基本数据类型,那么其<strong>数值不能改变</strong>;如果这个变量是引用类型,则其<strong>不能再指向另一个对象</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> String url = <span class="string">&quot;http://localhost:8080&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>这是最常用的写法,通过static和final关键字,使得变量初始化且不可改变</p>
+<p><img src="/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/6.png" alt="6"></p>
+<p>从图中可以看到,对final修饰的变量与对象是不能重新赋值的,不然编译器会报错</p>
+<ul>
+<li>当final作用于成员变量时,成员变量需要在定义时或者在构造器中进行初始化赋值,而其一旦被赋值,就不能再改变值了</li>
+</ul>
+<p><img src="/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/7.png" alt="7"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/09/23/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF(2)/" rel="prev" title="java学习之路(2)">
+      <i class="fa fa-chevron-left"></i> java学习之路(2)
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.</span> <span class="nav-text">java修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.1.</span> <span class="nav-text">访问修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#public"><span class="nav-number">1.1.1.</span> <span class="nav-text">public</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#protectd"><span class="nav-number">1.1.2.</span> <span class="nav-text">protectd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#private"><span class="nav-number">1.1.3.</span> <span class="nav-text">private</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.2.</span> <span class="nav-text">非访问修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#static"><span class="nav-number">1.2.1.</span> <span class="nav-text">static</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">静态变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">静态方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">静态代码块</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#final"><span class="nav-number">1.2.2.</span> <span class="nav-text">final</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#final%E4%BF%AE%E9%A5%B0%E7%9A%84%E5%8F%98%E9%87%8F"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">final修饰的变量</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
