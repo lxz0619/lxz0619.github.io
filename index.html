@@ -145,6 +145,141 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/30/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/30/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-4/" class="post-title-link" itemprop="url">java学习之路-4</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-30 13:26:46" itemprop="dateCreated datePublished" datetime="2020-09-30T13:26:46+08:00">2020-09-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-02 22:51:03" itemprop="dateModified" datetime="2020-10-02T22:51:03+08:00">2020-10-02</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="面向对象的三大特征"><a href="#面向对象的三大特征" class="headerlink" title="面向对象的三大特征"></a>面向对象的三大特征</h1><p>我们都知道,java是一门面向对象的语言,那么什么是面向对象,面向对象又有什么特点呢?</p>
+<p>面向对象是一种编程思想,与之相对的是面向过程.</p>
+<p>在面向过程编程中,我们需要定义程序的每一步走法,如果需要对程序进行增加操作,那么我们需要对代码进行大量的修改.</p>
+<p>面向对象是将这些需求进行分类,将其抽象成一个一个的类,然后对这些类进行具体的面向过程编程.比较适合用来处理复杂的问题,对于 代码的解耦和多人协作较为友好.<strong>面向对象的本质就是用类的方式组织代码,以对象的方式封装数据</strong></p>
+<p>面向对象最重要的三大特征就是:封装,继承和多态</p>
+<hr>
+<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><p>程序设计需要追求<strong>高内聚,低耦合</strong></p>
+<p>内部数据操作细节由类自己完成,不允许外部进行干涉.外部不需要知道我们是怎么进行数据的操作,只需要关心我们给的结果就行.我们只要暴露少量的方法给外部使用就好了.</p>
+<p>最简单的就是我们的实体类.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">cat</span> </span>&#123;</span><br><span class="line">    <span class="comment">//名字</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="comment">//年龄</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> age;</span><br><span class="line">    <span class="comment">//性别</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> sex;</span><br><span class="line">    <span class="comment">//体重</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> weight;</span><br><span class="line">&#125;</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
+
+
+<p>大家可以发现,我们把类的属性全部定义成私有的了.那么我们该怎么对属性进行操作的?</p>
+<p>idea可以自动生成getter/setter方法,用来对数据进行操作.</p>
+<p>正常情况下,我们都是对属性进行私有,只暴露公有get/set方法给外部.</p>
+<p>封装可以提高程序的安全性,保护我们的数据.同一了接口,提高了可维护性.</p>
+<hr>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>继承 面向对象编程技术的一块基石,因为他允许创建分等级的对象.</p>
+<p>我们一般将继承于别人的类叫做子类或派生类,被继承的类叫做父类或基类.</p>
+<p>继承就是子类继承父类的特征和行为,使得子类对象拥有父类的方法.</p>
+<p>例如</p>
+<p><img src="/2020/09/30/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-4/1.jpg" alt="1"></p>
+<p>我们将所有的陆地动物,抽象成了一个类,这些陆地动物都用肺呼吸,有腿.猫和狗继承了陆地动物类,因此猫和狗也有了陆地动物的特征,用肺呼吸,有腿.而他们又有着各自的特征,因此他们不是相同的个体.</p>
+<p>但是相信大家也发现了,这种继承其实是有问题的.例如鲸鱼是海洋动物,但他是用肺呼吸的.还有蛇,他是陆地动物,但是他没有腿.因此我们现在学习的继承只是十分初级的继承.这种情况就需要使用到设计模式了,以后再说.</p>
+<h4 id="继承的特点"><a href="#继承的特点" class="headerlink" title="继承的特点"></a>继承的特点</h4><ul>
+<li>子类拥有父类的非私有属性和方法,且子类可以拥有自己的属性和方法,即子类是对父类的拓展</li>
+<li>子类可以使用自己的方式重写父类的方法.</li>
+<li>提高了类之间的耦合性.</li>
+<li>java对类只能进行单继承和多重继承,对接口可以使用多继承.(单继承就是一次只能继承一个类,多重继承是可以有多级继承,如A-&gt;B-&gt;C,多继承就是一次可以继承多个接口)</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Sons</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样 Sons类就继承了Father类.</p>
+<p>在java中,所有的类都<strong>默认直接或者间接继承Object类</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">TestInterface1</span></span>&#123;</span><br><span class="line">&#125;</span><br><span class="line">publice <span class="class"><span class="keyword">interface</span> <span class="title">TestInterface1</span></span>&#123;</span><br><span class="line">&#125;</span><br><span class="line">publice <span class="class"><span class="keyword">class</span> <span class="title">test</span> <span class="title">implement</span> <span class="title">TestInterface1</span>,<span class="title">TestInterface2</span></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以通过implement关键字让类继承多个接口,不同的接口中通过逗号隔开</p>
+<hr>
+<h4 id="super和this"><a href="#super和this" class="headerlink" title="super和this"></a>super和this</h4><p>我们可以通过super关键字来访问父类成员,引用当前对象的父类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Sons</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> sonid;</span><br><span class="line">    <span class="keyword">private</span> sonage;</span><br><span class="line">    <span class="keyword">super</span>.id;</span><br><span class="line"> 	<span class="keyword">this</span>.sonid;</span><br><span class="line">    <span class="keyword">super</span>.age;</span><br><span class="line">    <span class="keyword">this</span>.sonage;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这边通过super调用的就是父类的属性,this调用的就是子类的属性.</p>
+<hr>
+<h4 id="final"><a href="#final" class="headerlink" title="final"></a>final</h4><p>前文说过,final是可以用来修饰类和方法的.当final用来修饰类的时候,这个类就不能继承.用于修饰方法时,这个方法就不能被子类重写</p>
+<hr>
+<h4 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h4><p>这是继承十分重要的一点,子类可以重写父类的方法,将其改成自己的特点.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">name</span><span class="params">()</span></span>&#123;</span><br><span class="line">    	System.out.println(<span class="string">&quot;我是父亲&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Sons</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">name</span><span class="params">()</span></span>&#123;</span><br><span class="line">    	System.out.println(<span class="string">&quot;我是儿子&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过加上override注解就可以重写方法了.可以重写方法的逻辑.</p>
+<hr>
+<h4 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h4><p>子类并不继承父类的构造器,他只是调用父类的构造器.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Father</span><span class="params">()</span></span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Sons</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Sons</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//什么都不写,默认隐式调用super();</span></span><br><span class="line">        <span class="keyword">super</span>();<span class="comment">//显式调用</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在调用子类构造器的时候,如果构造器中什么都不写,那么会隐式调用super();这就是调用父类的构造器了.也可以自己写上super();来调用.</p>
+<hr>
+<h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><p>多态是对象多种表现形式的体现</p>
+<p>如果想要使用多态,对象必须有继承关系,而且有重写的方法,并且父类引用指向子类对象</p>
+<p>多态是方法的多态,属性是没有多态的.对象的引用类型必须是有联系的(父类,爷爷类,祖宗类)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Father son1 = <span class="keyword">new</span> Sons();</span><br><span class="line">Sons son2 = <span class="keyword">new</span> Sons();</span><br><span class="line">son1.eat();<span class="comment">//调用的是sons的eat方法</span></span><br><span class="line">son2.run();<span class="comment">//调用的是sons的run方法</span></span><br></pre></td></tr></table></figure>
+
+<p>子类如果重写了父类的方法,那么执行的就是子类的方法.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Father</span><span class="params">()</span></span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Son1</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Sons</span><span class="params">()</span></span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;儿子1睡觉&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Son2</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Sons</span><span class="params">()</span></span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;儿子2睡觉&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Father father1 = <span class="keyword">new</span> Son1();</span><br><span class="line">        Father father2 = <span class="keyword">new</span> Son2();</span><br><span class="line">        choose(father1);</span><br><span class="line">        choose(father2);</span><br><span class="line">        father1.sleep();</span><br><span class="line">        father2.sleep();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">choose</span><span class="params">(Father father)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(father <span class="keyword">instanceof</span> Son1)&#123;</span><br><span class="line">            Son1 s1 = (Son1)father;</span><br><span class="line">            s1.sleep;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (father <span class="keyword">instanceof</span> Son2)&#123;</span><br><span class="line">            Son2 s2 = (Son2)father;</span><br><span class="line">            s2.sleep;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过instanceof来判断father对象的类型,向下转型进行输出,或者直接调用father对象的方法.</p>
+<h5 id="多态的优点"><a href="#多态的优点" class="headerlink" title="多态的优点"></a>多态的优点</h5><ul>
+<li>消除类型间的耦合</li>
+<li>可替换性,可扩充性</li>
+<li>接口性,灵活性</li>
+<li>简化性</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/25/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -788,7 +923,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
